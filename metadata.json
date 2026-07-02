@@ -1,0 +1,6 @@
+{
+  "name": "Mock Interview AI Platform",
+  "description": "An AI-powered mock interview platform that provides real-time feedback on user responses, generates custom scenarios from job descriptions, scans resumes to suggest questions, supports mock interview recording and playback, and tracks placement preparation performance with personalized scoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

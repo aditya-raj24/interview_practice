@@ -1,0 +1,497 @@
+{
+  "users": {
+    "u_u6048rw9s9": {
+      "uid": "u_u6048rw9s9",
+      "email": "adiraj242004@gmail.com",
+      "passwordHash": "QURJYWRpQDI0",
+      "displayName": "AdiRaj",
+      "createdAt": "2026-07-02T12:43:27.528Z"
+    }
+  },
+  "sessions": {
+    "u_bqix28bw828": [
+      {
+        "id": "session-1782986385476",
+        "title": "Placement prep: Software Development Engineer",
+        "jobRole": "Software Development Engineer",
+        "category": "Comprehensive",
+        "questions": [
+          {
+            "text": "Write a program to find the middle element of a singly linked list.",
+            "category": "DSA",
+            "difficulty": "Medium",
+            "modelAnswer": "To find the middle element of a singly linked list, we can use the slow and fast pointer approach. The slow pointer moves one step at a time, while the fast pointer moves two steps at a time. When the fast pointer reaches the end of the list, the slow pointer will be at the middle element. Here's a sample implementation in Python:\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef find_middle(head):\n    slow = head\n    fast = head\n    while fast is not None and fast.next is not None:\n        slow = slow.next\n        fast = fast.next.next\n    return slow.data\n```\nThis solution has a time complexity of O(n), where n is the number of elements in the linked list.",
+            "hints": [
+              "Use two pointers to traverse the linked list.",
+              "The fast pointer should move twice as fast as the slow pointer.",
+              "When the fast pointer reaches the end, the slow pointer will be at the middle element."
+            ],
+            "id": "q-1782986385466-0"
+          },
+          {
+            "text": "What is the difference between 'is' and '==' operators in Python?",
+            "category": "OOPS",
+            "difficulty": "Easy",
+            "modelAnswer": "In Python, 'is' and '==' are two different operators used for comparison. The '==' operator checks if the values of two variables are equal, while the 'is' operator checks if both variables point to the same object in memory. Here's an example:\n```python\na = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b)  # Output: True\nprint(a is b)  # Output: False\n```\nIn this example, 'a' and 'b' have the same value, but they are not the same object in memory.",
+            "hints": [
+              "Check the values of the variables.",
+              "Check if the variables point to the same object in memory.",
+              "Use '==' for value comparison and 'is' for object comparison."
+            ],
+            "id": "q-1782986385467-1"
+          },
+          {
+            "text": "Design a database schema for a simple e-commerce application.",
+            "category": "DBMS",
+            "difficulty": "Medium",
+            "modelAnswer": "A simple e-commerce database schema can include the following tables:\n- Users: stores information about registered users\n- Products: stores information about available products\n- Orders: stores information about placed orders\n- Order Items: stores information about the products in each order\nHere's a sample schema:\n```sql\nCREATE TABLE Users (\n    id INT PRIMARY KEY,\n    name VARCHAR(255),\n    email VARCHAR(255) UNIQUE\n);\n\nCREATE TABLE Products (\n    id INT PRIMARY KEY,\n    name VARCHAR(255),\n    price DECIMAL(10, 2)\n);\n\nCREATE TABLE Orders (\n    id INT PRIMARY KEY,\n    user_id INT,\n    order_date DATE,\n    FOREIGN KEY (user_id) REFERENCES Users(id)\n);\n\nCREATE TABLE OrderItems (\n    id INT PRIMARY KEY,\n    order_id INT,\n    product_id INT,\n    quantity INT,\n    FOREIGN KEY (order_id) REFERENCES Orders(id),\n    FOREIGN KEY (product_id) REFERENCES Products(id)\n);\n```\nThis schema captures the basic information needed for an e-commerce application.",
+            "hints": [
+              "Identify the main entities in the application.",
+              "Define the relationships between the entities.",
+              "Use foreign keys to establish relationships between tables."
+            ],
+            "id": "q-1782986385467-2"
+          },
+          {
+            "text": "How would you design a system to cache frequently accessed data?",
+            "category": "System Design",
+            "difficulty": "Hard",
+            "modelAnswer": "To design a system to cache frequently accessed data, we can use a combination of techniques such as caching algorithms, data structures, and distributed systems. Here's a high-level overview of the design:\n1. Choose a caching algorithm: We can use algorithms like LRU (Least Recently Used), LFU (Least Frequently Used), or a combination of both.\n2. Select a data structure: We can use data structures like hash tables, arrays, or linked lists to store the cached data.\n3. Implement a cache layer: We can implement a cache layer using a caching library or framework, or build a custom implementation using a programming language.\n4. Integrate with the application: We can integrate the cache layer with the application using APIs, SDKs, or libraries.\n5. Monitor and optimize: We can monitor the cache performance and optimize it by adjusting the caching algorithm, data structure, or cache size.\nHere's a sample implementation using a simple LRU cache in Python:\n```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        if key in self.cache:\n            value = self.cache.pop(key)\n            self.cache[key] = value  # move to end\n            return value\n        return None\n\n    def put(self, key, value):\n        if key in self.cache:\n            self.cache.pop(key)\n        elif len(self.cache) >= self.capacity:\n            self.cache.popitem(last=False)\n        self.cache[key] = value\n```\nThis implementation provides a basic LRU cache with a fixed capacity.",
+            "hints": [
+              "Choose a caching algorithm that suits the use case.",
+              "Select a data structure that provides efficient lookup and insertion.",
+              "Implement a cache layer that integrates with the application."
+            ],
+            "id": "q-1782986385467-3"
+          },
+          {
+            "text": "Tell me about a project you worked on that you're particularly proud of.",
+            "category": "Behavioral",
+            "difficulty": "Easy",
+            "modelAnswer": "I'd be happy to share a project I worked on that I'm particularly proud of. In my previous role, I worked on a project to develop a machine learning model for predicting customer churn. The project involved collecting and preprocessing data, training and testing the model, and deploying it to a production environment. I was proud of this project because it was a challenging task that required collaboration with multiple teams, and we were able to achieve a significant reduction in customer churn as a result of the model's predictions. I learned a lot from this project, including the importance of data quality, the need for effective communication with stakeholders, and the value of continuous learning and improvement.",
+            "hints": [
+              "Choose a project that demonstrates your skills and accomplishments.",
+              "Be specific about your role and contributions to the project.",
+              "Highlight the impact and results of the project."
+            ],
+            "id": "q-1782986385467-4"
+          },
+          {
+            "text": "Can you explain the concept of inheritance in object-oriented programming?",
+            "category": "OOPS",
+            "difficulty": "Easy",
+            "modelAnswer": "Inheritance is a fundamental concept in object-oriented programming that allows one class to inherit the properties and behavior of another class. The inheriting class is called the subclass or derived class, and the class being inherited from is called the superclass or base class. Inheritance allows for code reuse and facilitates the creation of a hierarchy of classes. Here's an example in Python:\n```python\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def sound(self):\n        pass\n\nclass Dog(Animal):\n    def __init__(self, name):\n        super().__init__(name)\n\n    def sound(self):\n        return 'Woof!'\n```\nIn this example, the Dog class inherits the name attribute and the sound method from the Animal class.",
+            "hints": [
+              "Define the superclass and subclass.",
+              "Use inheritance to reuse code and create a hierarchy of classes.",
+              "Override methods in the subclass to provide specific implementation."
+            ],
+            "id": "q-1782986385467-5"
+          },
+          {
+            "text": "How would you optimize the performance of a slow database query?",
+            "category": "DBMS",
+            "difficulty": "Medium",
+            "modelAnswer": "To optimize the performance of a slow database query, we can use several techniques such as indexing, caching, query optimization, and database tuning. Here are some steps to follow:\n1. Analyze the query: Use tools like EXPLAIN or EXPLAIN ANALYZE to understand the query execution plan and identify bottlenecks.\n2. Create indexes: Create indexes on columns used in the WHERE, JOIN, and ORDER BY clauses to speed up data retrieval.\n3. Optimize the query: Rewrite the query to reduce the number of joins, subqueries, and aggregations.\n4. Use caching: Implement caching mechanisms like query caching or result caching to store frequently accessed data.\n5. Tune the database: Adjust database settings like buffer pool size, sort buffer size, and log buffer size to optimize performance.\nHere's an example of optimizing a slow query using indexing:\n```sql\nCREATE INDEX idx_name ON customers (name);\nSELECT * FROM customers WHERE name = 'John';\n```\nThis query creates an index on the name column and uses it to speed up the query execution.",
+            "hints": [
+              "Analyze the query execution plan to identify bottlenecks.",
+              "Create indexes on columns used in the query.",
+              "Optimize the query to reduce joins, subqueries, and aggregations."
+            ],
+            "id": "q-1782986385467-6"
+          }
+        ],
+        "currentQuestionIndex": 0,
+        "answers": {},
+        "isCompleted": false,
+        "createdAt": "2026-07-02T09:59:45.476Z",
+        "userId": "u_bqix28bw828",
+        "updatedAt": "2026-07-02T12:37:49.839Z"
+      },
+      {
+        "_id": "6a456972e24f1cdbee982d07",
+        "id": "session-1782933877331",
+        "userId": "u_bqix28bw828",
+        "answers": {},
+        "category": "OOPS",
+        "createdAt": "2026-07-01T19:24:37.331Z",
+        "currentQuestionIndex": 0,
+        "isCompleted": false,
+        "jobRole": "Software Development Engineer",
+        "questions": [
+          {
+            "text": "What is the key difference between Abstraction and Encapsulation? Provide a real-world or code-based example of each.",
+            "category": "OOPS",
+            "difficulty": "Easy",
+            "modelAnswer": "Abstraction is the process of hiding internal details and showing only the essential features of an object. It focuses on what the object does rather than how it does it, typically achieved using interfaces or abstract classes. Encapsulation is the process of wrapping code and data together into a single unit (class) and controlling access via access specifiers like private, protected, and public. It focuses on data security and how to restrict direct manipulation of object state. Example: A car dashboard is an abstraction because it hides the complex mechanics of the engine (e.g., you press the gas pedal to accelerate, but you do not need to know how fuel injection works). Encapsulation is represented by the engine's internal state variables being private, only modifiable through public interfaces like the steering wheel or pedals, preventing direct external corruption of the engine state.",
+            "hints": [
+              "Think about 'what' a system does versus 'how' it secures its state.",
+              "Consider access specifiers like private and public.",
+              "An interface is a classic example of one of these."
+            ],
+            "id": "q-1782933877311-0"
+          },
+          {
+            "text": "Explain the Liskov Substitution Principle (LSP) with an example of how it can be violated and how to refactor the code to adhere to it.",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application. A classic violation occurs with a Rectangle class and a Square subclass. In Rectangle, setting the width and height can be done independently. In Square, setting the width must also set the height to maintain the square's invariant. If a client method expects a Rectangle and sets width and height to different values, substituting a Square will lead to unexpected behavior because the dimensions will overwrite each other. To refactor and adhere to LSP, we should break the inheritance relationship. Both Rectangle and Square can implement a shared 'Shape' interface that exposes a 'calculateArea()' method, keeping their structural properties encapsulated and independent.",
+            "hints": [
+              "Think of the classic Rectangle and Square inheritance issue.",
+              "Subclasses should not weaken preconditions or strengthen postconditions.",
+              "If a subclass throws NotImplementedException for an inherited method, it might be violating LSP."
+            ],
+            "id": "q-1782933877311-1"
+          },
+          {
+            "text": "Why is 'favor composition over inheritance' a common design guideline? Provide a scenario where composition is clearly superior to inheritance.",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "Inheritance establishes a rigid, compile-time 'is-a' relationship which breaks encapsulation because subclasses depend on the implementation details of the parent class (known as the fragile base class problem). Composition establishes a flexible 'has-a' relationship, wrapping helper components and delegating behavior to them, which can be easily changed or swapped at runtime. For example, consider a game with characters like Warrior, Mage, and Rogue. If we use inheritance to handle their combat and movement styles (e.g., FlyableWarrior, WalkableMage), we end up with a class explosion and code duplication. By using composition, we can define CombatBehavior and MovementBehavior interfaces. A Character class contains references to these interfaces, allowing us to dynamically change a character's abilities at runtime (e.g., a Mage gains the ability to fly by swapping their MovementBehavior reference) without altering any class hierarchy.",
+            "hints": [
+              "Consider what happens if the parent class changes its implementation.",
+              "Think about runtime behavior modifications vs compile-time structures.",
+              "Compare 'is-a' relationships with 'has-a' relationships."
+            ],
+            "id": "q-1782933877311-2"
+          },
+          {
+            "text": "How do you implement a thread-safe Singleton design pattern using Double-Checked Locking? Explain why the volatile keyword is necessary.",
+            "category": "OOPS",
+            "difficulty": "Hard",
+            "modelAnswer": "To implement double-checked locking, the singleton instance variable must be declared as 'private static volatile Singleton instance'. The constructor must be private. In the getInstance method, we perform a first check if the instance is null without locking. If it is null, we synchronize on the class level. Inside the synchronized block, we perform a second check if the instance is still null, and only then construct the object. This ensures synchronization only happens during the initial creation phase, avoiding heavy performance costs on subsequent calls. The 'volatile' keyword is critical because of instruction reordering by the compiler or CPU. The creation of an object involves: allocating memory, initializing the object, and writing the memory address to the reference variable. Without 'volatile', the compiler may reorder these steps such that the reference variable is updated before initialization is complete. Another thread could then see a non-null but partially initialized instance and crash.",
+            "hints": [
+              "Why is synchronizing the entire getInstance method bad for performance?",
+              "Think about how compiler optimizations like instruction reordering affect multithreaded code.",
+              "What is the purpose of the outer and inner null checks?"
+            ],
+            "id": "q-1782933877311-3"
+          },
+          {
+            "text": "Explain the difference between Static and Dynamic polymorphism. Specifically, how does a runtime environment like the JVM resolve dynamic method dispatch under the hood?",
+            "category": "OOPS",
+            "difficulty": "Hard",
+            "modelAnswer": "Static polymorphism (compile-time) is achieved through method overloading or templates/generics, where the compiler resolves which method to invoke based on the compile-time method signature and arguments. Dynamic polymorphism (runtime) is achieved through method overriding, where the actual method invoked is determined at runtime based on the type of the target object. Under the hood, runtime environments resolve dynamic method dispatch using a Virtual Method Table (vtable). Each class that defines or inherits virtual methods has its own vtable, which is an array of pointers to the compiled method implementations. When an object is instantiated, it contains a hidden pointer (often called vptr) pointing to its class's vtable. At runtime, when an overridden method is called, the JVM resolves the offset of that method in the object's vtable and directly executes the resolved memory address, ensuring the correct subclass implementation is run.",
+            "hints": [
+              "Think about mechanisms used by compilers versus runtime environments.",
+              "Research how virtual method tables (vtables) work in languages like Java or C++.",
+              "Contrast method overloading with method overriding."
+            ],
+            "id": "q-1782933877311-4"
+          }
+        ],
+        "title": "Placement prep: Software Development Engineer",
+        "updatedAt": "2026-07-02T12:37:49.888Z"
+      },
+      {
+        "id": "session-1782995839206",
+        "title": "Placement prep: Software Development Engineer",
+        "jobRole": "Software Development Engineer",
+        "category": "OOPS",
+        "questions": [
+          {
+            "text": "Consider a scenario where you have two classes, Animal and Dog. The Animal class has a method called makeSound() and the Dog class inherits from Animal. However, the Dog class also has its own implementation of makeSound(). How would you ensure that the Dog class's implementation of makeSound() is called when you create a Dog object and call the makeSound() method?",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "To ensure that the Dog class's implementation of makeSound() is called, you would use method overriding. In Java, you can override a method in a subclass by using the same method name and signature as the superclass. However, in this case, since the Dog class has its own implementation of makeSound(), you would need to call the superclass's makeSound() method from within the Dog class's implementation. This can be achieved by using the super keyword. For example:\n\npublic class Animal { \npublic void makeSound() {\nSystem.out.println(\"Animal makes a sound\");\n}\n}\n\npublic class Dog extends Animal {\n@Override\npublic void makeSound() {\nSystem.out.println(\"Dog barks\");\nsuper.makeSound();\n}\n}\n\nDog dog = new Dog();\ndog.makeSound();\nThis would output: Dog barks Animal makes a sound",
+            "hints": [
+              "Method overriding",
+              "super keyword",
+              "Polymorphism"
+            ],
+            "id": "q-1782995839073-0"
+          },
+          {
+            "text": "Consider a scenario where you have a class called BankAccount with attributes accountNumber and balance. The class also has methods to deposit and withdraw money. However, you want to ensure that the balance of the account never goes below zero. How would you implement this using SOLID principles?",
+            "category": "OOPS",
+            "difficulty": "Hard",
+            "modelAnswer": "To implement this using SOLID principles, you would use the Single Responsibility Principle (SRP) to ensure that the class has a single responsibility, which is to manage the account balance. You would also use the Open-Closed Principle (OCP) to ensure that the class is open for extension but closed for modification. This can be achieved by creating an interface called AccountManager that has methods to deposit and withdraw money. The BankAccount class would then implement this interface. To ensure that the balance never goes below zero, you would use a validation method that checks if the balance is less than zero before allowing a withdrawal. If the balance is less than zero, the method would throw an exception. For example:\n\npublic interface AccountManager {\nvoid deposit(double amount);\nvoid withdraw(double amount);\n}\n\npublic class BankAccount implements AccountManager {\nprivate double balance;\n\n@Override\npublic void deposit(double amount) {\nbalance += amount;\n}\n\n@Override\npublic void withdraw(double amount) {\nif (balance - amount < 0) {\nthrow new InsufficientBalanceException(\"Insufficient balance\");\n}\nbalance -= amount;\n}\n}\n\npublic class InsufficientBalanceException extends Exception {\npublic InsufficientBalanceException(String message) {\nsuper(message);\n}\n}\nThis implementation ensures that the balance of the account never goes below zero and follows the SOLID principles.",
+            "hints": [
+              "SOLID principles",
+              "Single Responsibility Principle",
+              "Open-Closed Principle"
+            ],
+            "id": "q-1782995839073-1"
+          },
+          {
+            "text": "Consider a scenario where you have a class called Shape with attributes width and height. The class also has methods to calculate the area and perimeter of the shape. However, you want to add a new shape called Circle with its own attributes and methods. How would you design the Shape class to accommodate the new shape?",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "To design the Shape class to accommodate the new shape, you would use the Strategy pattern. The Strategy pattern allows you to define a family of algorithms, encapsulate each one as an object, and make them interchangeable. In this case, you would create an interface called ShapeStrategy that has methods to calculate the area and perimeter of the shape. The Shape class would then implement this interface. To add the new shape called Circle, you would create a new class called CircleStrategy that implements the ShapeStrategy interface. The CircleStrategy class would have its own implementation of the area and perimeter methods. The Shape class would then use the Strategy pattern to switch between different shapes. For example:\n\npublic interface ShapeStrategy {\ndouble calculateArea();\ndouble calculatePerimeter();\n}\n\npublic class Shape {\nprivate ShapeStrategy strategy;\n\npublic Shape(ShapeStrategy strategy) {\nthis.strategy = strategy;\n}\n\npublic double calculateArea() {\nreturn strategy.calculateArea();\n}\n\npublic double calculatePerimeter() {\nreturn strategy.calculatePerimeter();\n}\n}\n\npublic class CircleStrategy implements ShapeStrategy {\nprivate double radius;\n\n@Override\npublic double calculateArea() {\nreturn Math.PI * radius * radius;\n}\n\n@Override\npublic double calculatePerimeter() {\nreturn 2 * Math.PI * radius;\n}\n}\n\npublic class RectangleStrategy implements ShapeStrategy {\nprivate double width;\nprivate double height;\n\n@Override\npublic double calculateArea() {\nreturn width * height;\n}\n\n@Override\npublic double calculatePerimeter() {\nreturn 2 * (width + height);\n}\n}\n\npublic class Main {\npublic static void main(String[] args) {\nShape circle = new Shape(new CircleStrategy(5));\nSystem.out.println(\"Circle area: \" + circle.calculateArea());\nSystem.out.println(\"Circle perimeter: \" + circle.calculatePerimeter());\n}\n}\nThis implementation allows you to add new shapes without modifying the Shape class.",
+            "hints": [
+              "Strategy pattern",
+              "Encapsulate algorithms",
+              "Interchangeable objects"
+            ],
+            "id": "q-1782995839073-2"
+          },
+          {
+            "text": "Consider a scenario where you have a class called Employee with attributes name, age, and salary. The class also has methods to calculate the employee's tax and benefits. However, you want to ensure that the employee's salary is always within a certain range. How would you implement this using encapsulation?",
+            "category": "OOPS",
+            "difficulty": "Easy",
+            "modelAnswer": "To implement this using encapsulation, you would make the salary attribute private and provide a public method to set the salary. The public method would check if the salary is within the allowed range before setting it. If the salary is not within the allowed range, the method would throw an exception. For example:\n\npublic class Employee {\nprivate double salary;\n\npublic void setSalary(double salary) {\nif (salary < 30000 || salary > 100000) {\nthrow new SalaryOutOfRangeException(\"Salary out of range\");\n}\nthis.salary = salary;\n}\n\npublic double getSalary() {\nreturn salary;\n}\n}\n\npublic class SalaryOutOfRangeException extends Exception {\npublic SalaryOutOfRangeException(String message) {\nsuper(message);\n}\n}\nThis implementation ensures that the employee's salary is always within the allowed range and follows the principle of encapsulation.",
+            "hints": [
+              "Encapsulation",
+              "Private attributes",
+              "Public methods"
+            ],
+            "id": "q-1782995839073-3"
+          },
+          {
+            "text": "Consider a scenario where you have a class called Vehicle with attributes color and model. The class also has methods to start and stop the vehicle. However, you want to ensure that the vehicle is always in a valid state. How would you implement this using abstraction?",
+            "category": "OOPS",
+            "difficulty": "Hard",
+            "modelAnswer": "To implement this using abstraction, you would create an abstract class called Vehicle that has abstract methods to start and stop the vehicle. The abstract methods would be declared without an implementation, and any class that extends the Vehicle class would be required to provide an implementation for these methods. To ensure that the vehicle is always in a valid state, you would use the Template Method pattern. The Template Method pattern allows you to define a skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure. For example:\n\npublic abstract class Vehicle {\npublic abstract void start();\npublic abstract void stop();\n\npublic void run() {\nstart();\n// perform some actions\nstop();\n}\n}\n\npublic class Car extends Vehicle {\n@Override\npublic void start() {\nSystem.out.println(\"Car started\");\n}\n\n@Override\npublic void stop() {\nSystem.out.println(\"Car stopped\");\n}\n}\n\npublic class Main {\npublic static void main(String[] args) {\nCar car = new Car();\ncar.run();\n}\n}\nThis implementation ensures that the vehicle is always in a valid state and follows the principle of abstraction.",
+            "hints": [
+              "Abstraction",
+              "Abstract classes",
+              "Template Method pattern"
+            ],
+            "id": "q-1782995839073-4"
+          }
+        ],
+        "currentQuestionIndex": 0,
+        "answers": {},
+        "isCompleted": false,
+        "createdAt": "2026-07-02T12:37:19.206Z",
+        "userId": "u_bqix28bw828",
+        "updatedAt": "2026-07-02T12:37:49.810Z"
+      },
+      {
+        "id": "session-1782995869729",
+        "title": "Placement prep: Software Development Engineer",
+        "jobRole": "Software Development Engineer",
+        "category": "OOPS",
+        "questions": [
+          {
+            "text": "What is the difference between method overriding and method overloading in Java? Provide an example of each.",
+            "category": "OOPS",
+            "difficulty": "Easy",
+            "modelAnswer": "Method overriding is a feature that allows a subclass to provide a different implementation of a method that is already defined in its superclass. This method has the same name, return type, and parameter list as the method in the superclass, but it can have a different implementation. On the other hand, method overloading is a feature that allows a class to have multiple methods with the same name but different parameter lists. This is useful when you want to perform different actions based on the number or types of arguments passed to the method. Here's an example of method overriding in Java:\n\n```java\npublic class Animal {\n    public void sound() {\n        System.out.println(\"The animal makes a sound.\");\n    }\n}\n\npublic class Dog extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"The dog barks.\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal animal = new Animal();\n        animal.sound();\n\n        Dog dog = new Dog();\n        dog.sound();\n    }\n}\n```\n\nAnd here's an example of method overloading in Java:\n\n```java\npublic class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    public int add(int a, int b, int c) {\n        return a + b + c;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Calculator calculator = new Calculator();\n        System.out.println(calculator.add(1, 2));\n        System.out.println(calculator.add(1, 2, 3));\n    }\n}\n```\n\nIn the first example, the `Dog` class overrides the `sound` method of the `Animal` class. In the second example, the `Calculator` class has two methods with the same name `add` but different parameter lists.",
+            "hints": [
+              "Think about the difference between method overriding and method overloading.",
+              "Provide an example of each.",
+              "Use Java as the programming language."
+            ],
+            "id": "q-1782995869724-0"
+          },
+          {
+            "text": "Explain the concept of encapsulation in OOP and provide an example of how it can be implemented in Java.",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "Encapsulation is a fundamental concept in object-oriented programming (OOP) that binds together the data and the methods that manipulate that data, and keeps both safe from outside interference and misuse. In other words, encapsulation is a mechanism of hiding the implementation details of an object from the outside world and only exposing the necessary information through public methods. This helps to prevent data corruption and ensures that the data is accessed and modified in a controlled manner. Here's an example of encapsulation in Java:\n\n```java\npublic class BankAccount {\n    private double balance;\n\n    public BankAccount(double balance) {\n        this.balance = balance;\n    }\n\n    public void deposit(double amount) {\n        balance += amount;\n        System.out.println(\"Deposited $\" + amount + \". New balance: $\" + balance);\n    }\n\n    public void withdraw(double amount) {\n        if (balance >= amount) {\n            balance -= amount;\n            System.out.println(\"Withdrew $\" + amount + \". New balance: $\" + balance);\n        } else {\n            System.out.println(\"Insufficient balance.\");\n        }\n    }\n\n    public double getBalance() {\n        return balance;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        BankAccount account = new BankAccount(1000);\n        account.deposit(500);\n        account.withdraw(200);\n        System.out.println(\"Final balance: $\" + account.getBalance());\n    }\n}\n```\n\nIn this example, the `BankAccount` class encapsulates the `balance` data by making it private and providing public methods to deposit, withdraw, and get the balance. This ensures that the balance is accessed and modified in a controlled manner, preventing data corruption and misuse.",
+            "hints": [
+              "Think about how to hide the implementation details of an object.",
+              "Provide an example of encapsulation in Java.",
+              "Use a real-world scenario to demonstrate encapsulation."
+            ],
+            "id": "q-1782995869724-1"
+          },
+          {
+            "text": "Design a class hierarchy for a university system that includes students, instructors, and courses. Use inheritance and polymorphism to ensure that the system is extensible and maintainable.",
+            "category": "OOPS",
+            "difficulty": "Hard",
+            "modelAnswer": "Here's a possible class hierarchy for a university system that includes students, instructors, and courses:\n\n```java\npublic abstract class Person {\n    protected String name;\n\n    public Person(String name) {\n        this.name = name;\n    }\n\n    public String getName() {\n        return name;\n    }\n}\n\npublic class Student extends Person {\n    private String studentId;\n\n    public Student(String name, String studentId) {\n        super(name);\n        this.studentId = studentId;\n    }\n\n    public String getStudentId() {\n        return studentId;\n    }\n}\n\npublic class Instructor extends Person {\n    private String employeeId;\n\n    public Instructor(String name, String employeeId) {\n        super(name);\n        this.employeeId = employeeId;\n    }\n\n    public String getEmployeeId() {\n        return employeeId;\n    }\n}\n\npublic abstract class Course {\n    protected String courseCode;\n\n    public Course(String courseCode) {\n        this.courseCode = courseCode;\n    }\n\n    public String getCourseCode() {\n        return courseCode;\n    }\n}\n\npublic class Lecture extends Course {\n    private String instructorId;\n\n    public Lecture(String courseCode, String instructorId) {\n        super(courseCode);\n        this.instructorId = instructorId;\n    }\n\n    public String getInstructorId() {\n        return instructorId;\n    }\n}\n\npublic class Lab extends Course {\n    private String labAssistantId;\n\n    public Lab(String courseCode, String labAssistantId) {\n        super(courseCode);\n        this.labAssistantId = labAssistantId;\n    }\n\n    public String getLabAssistantId() {\n        return labAssistantId;\n    }\n}\n```\n\nIn this hierarchy, the `Person` class is the base class that includes common attributes and methods for students and instructors. The `Student` and `Instructor` classes inherit from the `Person` class and add their own specific attributes and methods. The `Course` class is an abstract class that includes common attributes and methods for lectures and labs. The `Lecture` and `Lab` classes inherit from the `Course` class and add their own specific attributes and methods. This design ensures that the system is extensible and maintainable, as new types of courses or instructors can be easily added by creating new subclasses.",
+            "hints": [
+              "Think about how to design a class hierarchy for a university system.",
+              "Use inheritance and polymorphism to ensure that the system is extensible and maintainable.",
+              "Provide an example of how to add new types of courses or instructors."
+            ],
+            "id": "q-1782995869724-2"
+          },
+          {
+            "text": "Explain the concept of the Singleton design pattern and provide an example of how it can be implemented in Java.",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "The Singleton design pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. This is useful when you want to control access to a resource or when you want to ensure that a class has only one instance. Here's an example of how to implement the Singleton design pattern in Java:\n\n```java\npublic class Singleton {\n    private static Singleton instance;\n\n    private Singleton() {}\n\n    public static Singleton getInstance() {\n        if (instance == null) {\n            instance = new Singleton();\n        }\n        return instance;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Singleton singleton1 = Singleton.getInstance();\n        Singleton singleton2 = Singleton.getInstance();\n\n        System.out.println(singleton1 == singleton2); // prints: true\n    }\n}\n```\n\nIn this example, the `Singleton` class has a private constructor and a static method `getInstance` that returns the single instance of the class. The instance is created only when it is first requested, and subsequent requests return the same instance. This ensures that there is only one instance of the class.",
+            "hints": [
+              "Think about how to ensure that a class has only one instance.",
+              "Provide an example of how to implement the Singleton design pattern in Java.",
+              "Use a real-world scenario to demonstrate the Singleton design pattern."
+            ],
+            "id": "q-1782995869724-3"
+          },
+          {
+            "text": "Explain the concept of the Factory design pattern and provide an example of how it can be implemented in Java.",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "The Factory design pattern is a creational design pattern that provides a way to create objects without exposing the underlying logic of object creation. This is useful when you want to decouple object creation from the rest of the application. Here's an example of how to implement the Factory design pattern in Java:\n\n```java\npublic abstract class Animal {\n    public abstract void sound();\n}\n\npublic class Dog extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"The dog barks.\");\n    }\n}\n\npublic class Cat extends Animal {\n    @Override\n    public void sound() {\n        System.out.println(\"The cat meows.\");\n    }\n}\n\npublic class AnimalFactory {\n    public static Animal createAnimal(String type) {\n        if (type.equals(\"dog\")) {\n            return new Dog();\n        } else if (type.equals(\"cat\")) {\n            return new Cat();\n        } else {\n            throw new RuntimeException(\"Unsupported animal type.\");\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal animal = AnimalFactory.createAnimal(\"dog\");\n        animal.sound();\n\n        animal = AnimalFactory.createAnimal(\"cat\");\n        animal.sound();\n    }\n}\n```\n\nIn this example, the `AnimalFactory` class provides a static method `createAnimal` that returns an instance of the `Animal` class based on the type of animal requested. The `Dog` and `Cat` classes implement the `Animal` interface and provide their own implementation of the `sound` method. This decouples object creation from the rest of the application and makes it easier to add new types of animals.",
+            "hints": [
+              "Think about how to decouple object creation from the rest of the application.",
+              "Provide an example of how to implement the Factory design pattern in Java.",
+              "Use a real-world scenario to demonstrate the Factory design pattern."
+            ],
+            "id": "q-1782995869724-4"
+          }
+        ],
+        "currentQuestionIndex": 0,
+        "answers": {},
+        "isCompleted": false,
+        "createdAt": "2026-07-02T12:37:49.730Z",
+        "userId": "u_bqix28bw828",
+        "updatedAt": "2026-07-02T12:37:49.806Z"
+      }
+    ],
+    "u_u6048rw9s9": [
+      {
+        "id": "seed-1",
+        "title": "System Design Practice - Scale-up Architecture",
+        "jobRole": "Senior Backend Developer",
+        "category": "System Design",
+        "isCompleted": true,
+        "currentQuestionIndex": 2,
+        "createdAt": "2026-06-26T16:56:37.035Z",
+        "questions": [
+          {
+            "id": "sq-1",
+            "text": "Explain how you would design a rate limiter for a high-volume public API.",
+            "category": "System Design",
+            "difficulty": "Medium",
+            "modelAnswer": "A rate limiter limits traffic from specific clients. Popular algorithms include Token Bucket, Leaking Bucket, and Sliding Window Log. Redis is ideal for storage due to sub-millisecond atomic increments."
+          },
+          {
+            "id": "sq-2",
+            "text": "How do you manage database horizontal scalability (sharding) vs vertical scalability?",
+            "category": "System Design",
+            "difficulty": "Hard",
+            "modelAnswer": "Vertical scale is limited by CPU/RAM constraints. Horizontal scale (sharding) partitions rows across databases using partition keys. Tradeoffs include complicated queries, join limitations, and re-sharding overhead."
+          }
+        ],
+        "answers": {
+          "sq-1": {
+            "questionId": "sq-1",
+            "text": "I would use a Token Bucket algorithm stored inside Redis. Redis is very fast and supports atomic increments, preventing race conditions from multiple concurrent API servers.",
+            "analysis": {
+              "score": 84,
+              "strengths": [
+                "Clear choice of Token Bucket",
+                "Correctly identified Redis atomic operations."
+              ],
+              "weaknesses": [
+                "Did not mention sliding window tradeoff alternatives."
+              ],
+              "fillerWordCount": {
+                "um": 1,
+                "like": 2,
+                "basically": 0,
+                "uh": 0,
+                "youKnow": 1
+              },
+              "paceWpm": 125,
+              "feedbackText": "Excellent fundamental knowledge. Mention sliding windows or token leaking differences to make it perfect.",
+              "keyPointsCovered": [
+                "Token Bucket",
+                "Redis atomic operations"
+              ],
+              "keyPointsMissing": [
+                "Sliding window counter"
+              ],
+              "betterPhrasing": "I would implement a rate-limiting filter using the Token Bucket algorithm backed by Redis. Storing counts in Redis allows shared state across API nodes with atomic increment queries."
+            }
+          },
+          "sq-2": {
+            "questionId": "sq-2",
+            "text": "Sharding splits your dataset by a key, but it makes joins hard.",
+            "analysis": {
+              "score": 68,
+              "strengths": [
+                "Identified partitioning and join problems."
+              ],
+              "weaknesses": [
+                "Answer is extremely brief.",
+                "No mention of consistent hashing or key skewness."
+              ],
+              "fillerWordCount": {
+                "um": 0,
+                "like": 0,
+                "basically": 1,
+                "uh": 0,
+                "youKnow": 0
+              },
+              "paceWpm": 80,
+              "feedbackText": "Elaborate more on consistent hashing, partition key choice, and how skewness is handled.",
+              "keyPointsCovered": [
+                "Database partitioning",
+                "Join constraints"
+              ],
+              "keyPointsMissing": [
+                "Consistent hashing",
+                "Hotspot partition key mitigation"
+              ],
+              "betterPhrasing": "Horizontal partitioning, or sharding, distributes database rows across machines using a shard key. While this scales write throughput, it introduces significant complexity in cross-shard joins and transaction management."
+            }
+          }
+        },
+        "score": {
+          "overall": 76,
+          "technical": 78,
+          "communication": 74,
+          "relevance": 78,
+          "confidence": 75
+        },
+        "userId": "u_u6048rw9s9",
+        "updatedAt": "2026-07-02T12:43:27.723Z"
+      },
+      {
+        "id": "seed-2",
+        "title": "OOPS Solid Principles Appraisal",
+        "jobRole": "SDE II Candidate",
+        "category": "OOPS",
+        "isCompleted": true,
+        "currentQuestionIndex": 1,
+        "createdAt": "2026-06-29T16:56:37.059Z",
+        "questions": [
+          {
+            "id": "sq-3",
+            "text": "Can you describe the Liskov Substitution Principle (LSP) with a clear software design example?",
+            "category": "OOPS",
+            "difficulty": "Medium",
+            "modelAnswer": "LSP states that subtypes must be substitutable for their base types. A classic violation is a Square inheriting from Rectangle where setting height changes width, breaking expected rectangle assumptions."
+          }
+        ],
+        "answers": {
+          "sq-3": {
+            "questionId": "sq-3",
+            "text": "Liskov means children should be able to replace parents without causing errors. For example, a square inherits rectangle but modifying rectangle width should not break square rules.",
+            "analysis": {
+              "score": 89,
+              "strengths": [
+                "Excellent substitution definition.",
+                "Correctly applied square/rectangle inheritance trap."
+              ],
+              "weaknesses": [
+                "Could list real-world interface decoupling tools."
+              ],
+              "fillerWordCount": {
+                "um": 0,
+                "like": 1,
+                "basically": 0,
+                "uh": 1,
+                "youKnow": 0
+              },
+              "paceWpm": 135,
+              "feedbackText": "Outstanding response. Decouple square and rectangle with a common shape interface to follow correct LSP standards.",
+              "keyPointsCovered": [
+                "Subtype substitutability",
+                "Rectangle/Square paradox"
+              ],
+              "keyPointsMissing": [
+                "Interface segregation"
+              ],
+              "betterPhrasing": "The Liskov Substitution Principle asserts that objects of a superclass should be replaceable with objects of its subclasses without breaking application behavior. To prevent square-rectangle inheritance issues, decouple them using a shared geometric shape interface."
+            }
+          }
+        },
+        "score": {
+          "overall": 89,
+          "technical": 90,
+          "communication": 88,
+          "relevance": 91,
+          "confidence": 87
+        },
+        "userId": "u_u6048rw9s9",
+        "updatedAt": "2026-07-02T12:43:27.729Z"
+      }
+    ]
+  }
+}
