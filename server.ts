@@ -3,9 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import dns from "dns";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const pdfParse = require("pdf-parse");
+import * as pdfParse from "pdf-parse";
 import mammoth from "mammoth";
 
 // Configure Node.js to use Google DNS to bypass local ISP SRV resolution issues (ECONNREFUSED)
