@@ -20,7 +20,7 @@ AuraInterview is a high-performance web platform designed to prepare candidates 
 - **Backend:** Node.js, Express
 - **AI Integration:** NVIDIA NIM API (`meta/llama-3.1-8b-instruct`)
 - **Speech APIs:** Native Web Speech API (Speech Synthesis & Speech Recognition)
-- **Database:** MongoDB (with local JSON fallback)
+- **Database:** MongoDB
 
 ---
 
